@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const List = styled.section`
-  display: inline-block;
-  width: 400px;
+  float: left;
+  width: 600px;
   height: 100vh;
   background: #222;
 `
 
 export const DetailHolder = styled.section`
-  display: inline-block;
-  width: calc(100vw - 400px);
+  float: right;
+  width: calc(100% - 600px);
   height: 100vh;
   background: #aaa;
 `
