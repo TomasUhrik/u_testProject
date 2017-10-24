@@ -8,10 +8,8 @@ class Offer extends Component {
       <Box>
         <Img />
         <TextHolder>
-          <Name> Ivan Bartos </Name>
-          <Story>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-          </Story>
+          <Name> {this.props.name} </Name>
+          <Story>{this.props.story}}</Story>
         </TextHolder>
       </Box>
     )
