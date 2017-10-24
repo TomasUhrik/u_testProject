@@ -3,31 +3,34 @@ import styled from 'styled-components'
 export const Box = styled.div`
   display: inline-block;
   width: 100%;
-  background: #555;
-  min-height: 200px;
+  height: 150px;
+  border-bottom: 2px solid #555;
 `
 export const Img = styled.img`
   display: inline-block;
+  max-height: 148px;
   margin: 0 5% 0 0;
-  width: 20%;
-  height: 200px;
-  background: #777;
   border: none;
+  vertical-align: top;
 `
 
 export const TextHolder = styled.div`
   display: inline-block;
-  position: relative;
-  margin: 0 0 0 5%;
-  width: 70%;
+  width: calc(100% - 300px);
+  height: 150px;
+  padding: 7.5px 0;
+  text-overflow: ellipsis;
+  vertical-align: top;
 `
 
 export const Name = styled.p`
-  font-size: 2.4em;
+  font-size: 1.6em;
   margin: 0;
 `
 
 export const Story = styled.p`
-  font-size: 1.4em;
-  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `
