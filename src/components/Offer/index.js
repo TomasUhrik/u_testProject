@@ -7,7 +7,6 @@ import { Box, Img, TextHolder, Name, Story } from './style.js'
 
 class Offer extends Component {
   handleOnClick = () => {
-    console.log(this.props)
     this.props.selectOffer(this.props)
   }
 
