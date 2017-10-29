@@ -6,7 +6,6 @@ import store from './store'
 import App from './App'
 
 // Utilities
-import 'babel-polyfill'
 import 'sanitize.css'
 
 ReactDOM.render(

@@ -1,4 +1,10 @@
-import { ASK_FOR_OFFERS, RECEIVE_OFFERS } from './constants'
+import {
+  ASK_FOR_OFFERS,
+  RECEIVE_OFFERS,
+  FILTER_BY_LENGTH,
+  FILTER_BY_RATING,
+  FILTER_BY_AMOUNT,
+} from './constants'
 
 export const askForOffers = () => ({
   type: ASK_FOR_OFFERS,
@@ -10,4 +16,19 @@ export const receiveOffers = response => ({
   payload: {
     response,
   },
+})
+
+export const filterByLength = () => ({
+  type: FILTER_BY_LENGTH,
+  payload: {},
+})
+
+export const filterByRating = () => ({
+  type: FILTER_BY_RATING,
+  payload: {},
+})
+
+export const filterByAmount = () => ({
+  type: FILTER_BY_AMOUNT,
+  payload: {},
 })
