@@ -4,6 +4,7 @@ import {
   FILTER_BY_LENGTH,
   FILTER_BY_RATING,
   FILTER_BY_AMOUNT,
+  SELECT_OFFER,
 } from './constants'
 
 export const askForOffers = () => ({
@@ -31,4 +32,11 @@ export const filterByRating = () => ({
 export const filterByAmount = () => ({
   type: FILTER_BY_AMOUNT,
   payload: {},
+})
+
+export const selectOffer = offer => ({
+  type: SELECT_OFFER,
+  payload: {
+    offer,
+  },
 })

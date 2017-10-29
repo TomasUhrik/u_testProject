@@ -4,6 +4,7 @@ import 'whatwg-fetch' // polyfill for fetch()
 
 import { List, DetailHolder } from './style.js'
 import Offer from '../../components/Offer'
+import OfferDetail from '../../components/OfferDetail'
 import Filters from '../../components/Filters'
 import { askForOffers } from '../../data/offers/actions'
 
@@ -21,7 +22,9 @@ class Home extends Component {
             <Filters />
             {this.props.data.map(i => <Offer key={i.id} {...i} />)}
           </List>
-          <DetailHolder />
+          <DetailHolder>
+            <OfferDetail />
+          </DetailHolder>
         </div>
       )
     } else return <h1> Loading... </h1>

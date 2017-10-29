@@ -4,11 +4,13 @@ import {
   FILTER_BY_LENGTH,
   FILTER_BY_RATING,
   FILTER_BY_AMOUNT,
+  SELECT_OFFER,
 } from './constants'
 const R = require('ramda')
 
 const initialState = {
   data: null,
+  offerDetail: null,
 }
 
 const offers = (state = initialState, action) => {
@@ -50,6 +52,13 @@ const offers = (state = initialState, action) => {
         ...state,
 
         data: dataSortedAmount,
+      }
+
+    case SELECT_OFFER:
+      return {
+        ...state,
+
+        offerDetail: action.payload.offer,
       }
 
     default:
