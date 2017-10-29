@@ -10,6 +10,7 @@ import {
   Highlight,
   StoryBox,
   DetailBox,
+  Hint,
 } from './style.js'
 
 class OfferDetail extends Component {
@@ -59,7 +60,7 @@ class OfferDetail extends Component {
     } else {
       return (
         <div>
-          <h1> Zvolte ze seznamu </h1>
+          <Hint> Zvolte ze seznamu </Hint>
         </div>
       )
     }

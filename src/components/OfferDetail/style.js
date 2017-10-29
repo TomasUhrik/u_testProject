@@ -46,3 +46,11 @@ export const Li = styled.li`
   font-size: 1.2em;
 `
 export const Highlight = styled.span`font-weight: bold;`
+
+export const Hint = styled.p`
+  padding: 50px;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  font-size: sans-serif;
+`

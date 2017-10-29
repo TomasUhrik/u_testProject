@@ -5,6 +5,7 @@ export const Box = styled.div`
   width: 100%;
   height: 150px;
   border-bottom: 2px solid #555;
+  cursor: pointer;
 `
 export const Img = styled.img`
   display: inline-block;
@@ -24,7 +25,7 @@ export const TextHolder = styled.div`
 `
 
 export const Name = styled.p`
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin: 0;
 `
 
