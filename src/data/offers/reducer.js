@@ -28,7 +28,7 @@ const offers = (state = initialState, action) => {
       }
 
     case FILTER_BY_LENGTH:
-      const sortLength = R.sortWith([R.ascend(R.prop('termInMonths'))])
+      const sortLength = R.sortWith([R.descend(R.prop('termInMonths'))])
       const dataSortedLength = sortLength(state.data)
       return {
         ...state,
@@ -37,8 +37,39 @@ const offers = (state = initialState, action) => {
       }
 
     case FILTER_BY_RATING:
-      const sortRating = R.sortWith([R.ascend(R.prop('rating'))])
+      // Ramda sortWith is not sufficient, because alphabetical sort does not count AA as better than A
+      // 1) take data
+      let ratingSample = state.data
+
+      // 2) Split rating
+      let ratingSplit = ratingSample.map(i => i.rating.split(''))
+
+      // 3) Translate "X" into numbers
+      const scoreTable = {
+        A: 100,
+        B: 10,
+        C: 1,
+        D: 0,
+      }
+
+      let ratingInNumbers = ratingSplit.map(i =>
+        i.map(x =>
+          Number(x.replace(/A|B|C|D/, matched => scoreTable[matched])),
+        ),
+      )
+
+      // 4) Sum scores
+      let ratingSummed = ratingInNumbers.map(i => i.reduce((a, b) => a + b, 0))
+
+      // 5) Back to data
+      for (let i = 0; i < state.data.length; i++) {
+        state.data[i].ratingScore = ratingSummed[i]
+      }
+
+      // 6) Sort
+      const sortRating = R.sortWith([R.descend(R.prop('ratingScore'))])
       const dataSortedRating = sortRating(state.data)
+
       return {
         ...state,
 
@@ -46,7 +77,7 @@ const offers = (state = initialState, action) => {
       }
 
     case FILTER_BY_AMOUNT:
-      const sortAmount = R.sortWith([R.ascend(R.prop('amount'))])
+      const sortAmount = R.sortWith([R.descend(R.prop('amount'))])
       const dataSortedAmount = sortAmount(state.data)
       return {
         ...state,
